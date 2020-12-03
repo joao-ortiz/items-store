@@ -1,14 +1,13 @@
 import {createContext, useReducer} from 'react'
-import InventoryReducer from '../Reducers/InventoryReducer'
+import {inventoryReducer} from '../Reducers/InventoryReducer'
 
 export const InventoryContext = createContext()
 
 var InventoryContextProvider = (props) => {
-    const [inventory, dispatch] = useReducer(InventoryReducer)
-
-    return <InventoryReducer.Provider value={{inventory, dispatch}} >
+    const [inventory, dispatch] = useReducer(inventoryReducer, [])
+    return <InventoryContext.Provider value={{inventory, dispatch}} >
         {props.children}
-    </InventoryReducer.Provider>
+    </InventoryContext.Provider>
 }
 
 export default InventoryContextProvider

@@ -1,6 +1,6 @@
 import './index.scss'
 var Filter = (props) => {
-    const options = props.options.map(o => {
+    const options = props.options.forEach(o => {
         return <button key={o} onClick={() => props.handleFilter(o)}>{o}</button>
     })
     return (

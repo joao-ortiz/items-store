@@ -1,4 +1,5 @@
 import './index.scss'
+import Menu from '../Menu'
 var Header = ({sections, section, setSection}) => {
     return (
         <header>

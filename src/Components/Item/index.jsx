@@ -5,19 +5,20 @@ var Item = ({item}) => {
     const {dispatch} = useContext(InventoryContext)
     const itemAttributes = () => {
         return item.stats.map(stat => {
-            return <span>{stat.propriety}: {stat.value}</span>
+            return <span key={stat.property}>{stat.property}: {stat.value}</span>
         })
     }
     return (
         <div className="item-container">
             <div className="image-container">
-                <img src={require(`../../assets/${item.img}.png`).default} alt=""/>
+                <img src={require(`../../assets/${item.img}.jpg`)} alt=""/>
             </div>
             <div className="item-info">
                 <p className="item-name">{item.name}</p>
-                { itemAttributes }
+                { itemAttributes() }
             </div>
-            <button onClick={() => dispatch({action:'ADD_ITEM', item})} className="add-item">+</button>
+            <button onClick={() => dispatch({type:'ADD_ITEM', item})} className="add-item">+</button>
         </div>
     )
 }
+export default Item

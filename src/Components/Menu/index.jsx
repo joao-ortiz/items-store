@@ -7,8 +7,10 @@ var Menu = ({sections, setSection}) => {
         <div className="menu-container">
             <button></button>
             <div className="menu-dropdown">
+                <button onClick={() => setSection('all')}>All</button>
                 {options}
             </div>
         </div>
     )
 }
+export default Menu

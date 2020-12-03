@@ -1,9 +1,13 @@
-export const InventoryReducer = (state, action) => {
+export const inventoryReducer = (state, action) => {
     switch(action.type) {
         case 'ADD_ITEM':
-            return state
+            console.log(action.item);
+            return [
+                ...state,
+                action.item.id
+            ]
         case 'REMOVE_ITEM':
-            return state
+            return state.filter(i => i!== action.item.id)
         default:
             return state
     }

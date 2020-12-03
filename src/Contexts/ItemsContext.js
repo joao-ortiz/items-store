@@ -1,9 +1,8 @@
 import {createContext, useState} from 'react'
-
+import {initialItems} from '../utlis/items'
 export var ItemsContext = createContext()
 
 var ItemsContextProvider = (props) =>{
-    var initialItems
     var [items, setItems] = useState(initialItems)
 
     return <ItemsContext.Provider value={{items}}>
